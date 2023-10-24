@@ -18,7 +18,7 @@ int main() {
     }
 
     while ((nread = getline(&line, &len, stream)) != -1) {
-        calorie_count += atoi(line);
+        calorie_count += atoi(line); // if line == "\n" atoi returns 0
         if (strcmp(line, "\n") == 0) {
             if (calorie_count > max_calories) max_calories = calorie_count;
             calorie_count = 0;

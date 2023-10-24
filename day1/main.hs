@@ -5,12 +5,16 @@ stringToInt :: String -> Int
 stringToInt str = read str :: Int
 
 handle :: [String] -> Int -> Int -> Int
-handle [] calorie_count max_calories = max_calories
-handle xs calorie_count max_calories =
-    if head xs /= "" then
-        handle (tail xs) (calorie_count + stringToInt (head xs)) max_calories
+handle [] calorieCount maxCalories = maxCalories
+handle xs calorieCount maxCalories =
+    if xHead /= "" then
+        handle xTail calorieSum maxCalories
     else
-        handle (tail xs) 0 (greater calorie_count max_calories)
+        handle xTail 0 (greater calorieCount maxCalories)
+    where
+        xHead = head xs
+        xTail = tail xs
+        calorieSum = calorieCount + stringToInt xHead
 
 main = do
     input <- readFile "input.txt"
