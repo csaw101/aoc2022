@@ -1,2 +1,5 @@
 main
 .ccls-cache
+*.hi
+*.o
+*.bk
