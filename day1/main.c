@@ -25,6 +25,9 @@ int main() {
         }
     }
 
+    if (calorie_count > max_calories)
+        max_calories = calorie_count;
+
     free(line);
     fclose(stream);
 
